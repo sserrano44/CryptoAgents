@@ -1,0 +1,27 @@
+# CryptoAgents Additional Requirements
+# These are in addition to the base TradingAgents requirements
+
+# API and Data
+requests>=2.31.0
+pandas>=2.0.0
+python-dotenv>=1.0.0
+
+# Crypto-specific libraries
+# Note: Most functionality is implemented directly using CoinMarketCap API
+# Additional crypto libraries can be added as needed:
+# ccxt>=4.0.0  # For exchange integration (future enhancement)
+# web3>=6.0.0  # For on-chain data (future enhancement)
+
+# The base requirements.txt already includes:
+# - langchain-openai
+# - langchain-experimental
+# - pandas
+# - yfinance (for legacy compatibility)
+# - stockstats (for technical indicators)
+# - langgraph
+# - OpenAI
+# - Other dependencies
+
+# To install everything:
+# pip install -r requirements.txt
+# pip install -r crypto_requirements.txt

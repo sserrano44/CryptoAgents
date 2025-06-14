@@ -276,6 +276,14 @@ The CryptoAgents system follows a structured workflow mimicking a professional t
    - Add delays between requests
    - Use caching for repeated queries
 
+## Community
+
+Join our Discord community to discuss CryptoAgents, share trading strategies, and collaborate with other users:
+
+**[Join Discord Server](https://discord.gg/qn5cxVNGBh)**
+
+Make sure to join the **#crypto-agents** channel for project-specific discussions, support, and updates!
+
 ## Contributing
 
 Contributions are welcome! Please:
@@ -319,6 +327,9 @@ CryptoAgents/
 
 ## Acknowledgments
 
+This project is a heavily edited fork of [TradingAgents](https://github.com/TauricResearch/TradingAgents) (which focuses on traditional stocks), adapted and optimized specifically for cryptocurrency trading with significant architectural changes and feature additions.
+
+- Original TradingAgents framework by TauricResearch
 - Inspired by professional trading desk operations
 - CoinMarketCap for comprehensive cryptocurrency data
 - OpenAI for advanced LLM capabilities

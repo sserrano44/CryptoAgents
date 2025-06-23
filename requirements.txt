@@ -6,6 +6,10 @@ requests>=2.31.0
 pandas>=2.0.0
 python-dotenv>=1.0.0
 
+# PDF Report Generation
+reportlab>=4.0.0
+markdown>=3.5.0
+
 # Crypto-specific libraries
 # Note: Most functionality is implemented directly using CoinMarketCap API
 # Additional crypto libraries can be added as needed:

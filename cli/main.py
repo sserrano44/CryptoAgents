@@ -22,6 +22,7 @@ from cryptoagents.graph.trading_graph import TradingAgentsGraph
 from cryptoagents.config import CRYPTO_CONFIG
 from cli.models import AnalystType
 from cli.utils import *
+from cli.pdf_generator import generate_trading_report_pdf
 
 console = Console()
 
@@ -1005,6 +1006,24 @@ def run_analysis():
 
         # Display the complete final report
         display_complete_report(final_state)
+
+        # Generate PDF and Markdown reports
+        try:
+            if message_buffer.final_report:
+                pdf_path, markdown_path = generate_trading_report_pdf(
+                    crypto_symbol=selections['ticker'],
+                    analysis_date=selections['analysis_date'],
+                    final_report=message_buffer.final_report
+                )
+                message_buffer.add_message("System", f"Reports saved - PDF: {pdf_path}, MD: {markdown_path}")
+                console.print(f"\n[bold green]✓ Reports Generated:[/bold green]")
+                console.print(f"  PDF: {pdf_path}")
+                console.print(f"  Markdown: {markdown_path}")
+            else:
+                console.print("\n[yellow]⚠ No final report available for report generation[/yellow]")
+        except Exception as e:
+            message_buffer.add_message("Error", f"Report generation failed: {str(e)}")
+            console.print(f"\n[red]✗ Report Generation Failed:[/red] {str(e)}")
 
         update_display(layout)
 

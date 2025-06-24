@@ -55,6 +55,7 @@ cp .env.example .env
 ## Memories
 
 - When running python the environment CryptoAgents needs to be active
+- supported_cryptos is set at CRYPTO_CONFIG
 
 ## Architecture Overview
 

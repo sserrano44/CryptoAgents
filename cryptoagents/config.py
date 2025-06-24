@@ -38,7 +38,7 @@ CRYPTO_CONFIG = {
     # Cryptocurrency-specific settings
     "supported_cryptos": [
         "BTC", "ETH", "BNB", "XRP", "ADA", "SOL", "DOGE", "DOT", "MATIC", "AVAX",
-        "LINK", "UNI", "ATOM", "LTC", "ETC", "XLM", "ALGO", "VET", "FIL", "AAVE"
+        "LINK", "UNI", "ATOM", "LTC", "ETC", "XLM", "ALGO", "VET", "FIL", "AAVE", "DYDX"
     ],
     
     # Trading parameters

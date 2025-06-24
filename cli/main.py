@@ -474,7 +474,8 @@ def get_crypto_symbol():
         if validate_crypto_symbol(symbol):
             return symbol
         else:
-            console.print(f"[red]Error: '{symbol}' is not a supported cryptocurrency. Supported symbols: BTC, ETH, ADA, DOT, LINK, UNI, AAVE, MATIC, SOL, AVAX[/red]")
+            supported_symbols = ", ".join(CRYPTO_CONFIG["supported_cryptos"])
+            console.print(f"[red]Error: '{symbol}' is not a supported cryptocurrency. Supported symbols: {supported_symbols}[/red]")
             console.print("[yellow]Please enter a valid cryptocurrency symbol:[/yellow]")
 
 

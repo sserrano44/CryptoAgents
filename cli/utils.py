@@ -2,6 +2,7 @@ import questionary
 from typing import List, Optional, Tuple, Dict
 
 from cli.models import AnalystType
+from cryptoagents.config import CRYPTO_CONFIG
 
 ANALYST_ORDER = [
     ("Crypto Market Analyst", AnalystType.MARKET),
@@ -18,9 +19,10 @@ def get_crypto_symbol() -> str:
     def validate_crypto(symbol: str) -> bool:
         return validate_crypto_symbol(symbol.strip().upper())
     
+    supported_symbols = ", ".join(CRYPTO_CONFIG["supported_cryptos"])
     symbol = questionary.text(
         "Enter the cryptocurrency symbol to analyze:",
-        validate=lambda x: validate_crypto(x) or "Please enter a valid cryptocurrency symbol (BTC, ETH, ADA, DOT, LINK, UNI, AAVE, MATIC, SOL, AVAX).",
+        validate=lambda x: validate_crypto(x) or f"Please enter a valid cryptocurrency symbol ({supported_symbols}).",
         style=questionary.Style(
             [
                 ("text", "fg:green"),

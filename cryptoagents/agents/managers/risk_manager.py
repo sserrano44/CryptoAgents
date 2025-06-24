@@ -22,26 +22,26 @@ def create_risk_manager(llm, memory):
         for i, rec in enumerate(past_memories, 1):
             past_memory_str += rec["recommendation"] + "\n\n"
 
-        prompt = f"""As the Risk Management Judge and Debate Facilitator, your goal is to evaluate the debate between three risk analysts—Risky, Neutral, and Safe/Conservative—and determine the best course of action for the trader. Your decision must result in a clear recommendation: Buy, Sell, or Hold. Choose Hold only if strongly justified by specific arguments, not as a fallback when all sides seem valid. Strive for clarity and decisiveness.
+        prompt = f"""As the Crypto Risk Management Judge and Debate Facilitator, your goal is to evaluate the debate between three crypto risk analysts—Risky, Neutral, and Safe/Conservative—and determine the best course of action for the crypto trader. Your decision must result in a clear recommendation: Buy, Sell, or Hold. Choose Hold only if strongly justified by specific arguments, not as a fallback when all sides seem valid. Strive for clarity and decisiveness.
 
 Guidelines for Decision-Making:
-1. **Summarize Key Arguments**: Extract the strongest points from each analyst, focusing on relevance to the context.
-2. **Provide Rationale**: Support your recommendation with direct quotes and counterarguments from the debate.
-3. **Refine the Trader's Plan**: Start with the trader's original plan, **{trader_plan}**, and adjust it based on the analysts' insights.
-4. **Learn from Past Mistakes**: Use lessons from **{past_memory_str}** to address prior misjudgments and improve the decision you are making now to make sure you don't make a wrong BUY/SELL/HOLD call that loses money.
+1. **Summarize Key Arguments**: Extract the strongest points from each analyst, focusing on crypto-specific risks like regulatory uncertainty, network security, token concentration, and market volatility.
+2. **Provide Rationale**: Support your recommendation with direct quotes and counterarguments from the debate, emphasizing factors like adoption trends, protocol developments, and on-chain metrics.
+3. **Refine the Trader's Plan**: Start with the trader's original crypto plan, **{trader_plan}**, and adjust it based on the analysts' insights about token-specific risks and opportunities.
+4. **Learn from Past Mistakes**: Use lessons from **{past_memory_str}** to address prior misjudgments in crypto trading and improve the decision you are making now to make sure you don't make a wrong BUY/SELL/HOLD call that loses money.
 
 Deliverables:
-- A clear and actionable recommendation: Buy, Sell, or Hold.
-- Detailed reasoning anchored in the debate and past reflections.
+- A clear and actionable crypto trading recommendation: Buy, Sell, or Hold.
+- Detailed reasoning anchored in the debate and past crypto trading reflections.
 
 ---
 
-**Analysts Debate History:**  
+**Crypto Risk Analysts Debate History:**  
 {history}
 
 ---
 
-Focus on actionable insights and continuous improvement. Build on past lessons, critically evaluate all perspectives, and ensure each decision advances better outcomes."""
+Focus on actionable crypto trading insights and continuous improvement. Build on past crypto lessons, critically evaluate all perspectives, and ensure each decision advances better crypto trading outcomes."""
 
         response = llm.invoke(prompt)
 
